@@ -7,5 +7,5 @@ This project was made in 2020, it runs a Express server to serve the game, the o
 
 The only implementation "finished" was the offline HTML version.
 
-* License
+** License
 MIT
