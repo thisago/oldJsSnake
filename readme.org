@@ -1,0 +1,11 @@
+#+title: 2020 snake game
+
+This project was made in 2020, it runs a Express server to serve the game, the objective was create 3 kinds of implementation:
+- Using HTML elements
+- Online game with HTML elements
+- Using canvas
+
+The only implementation "finished" was the offline HTML version.
+
+* License
+MIT

@@ -1,0 +1,172 @@
+.container {
+    width: 400px;
+    height: 400px;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 5px solid #ddd;
+    overflow: hidden;
+    --size: 20px;
+}
+
+/*
+10px 20
+
+*/
+
+div.container div.snake {
+    height: var(--size);
+    width: var(--size);
+    position: relative;
+}
+
+div.container div.snake div {
+    background-color: green;
+    height: var(--size);
+    width: var(--size);
+    position: absolute;
+    z-index: 10;
+    transition: background-color .5s;
+}
+
+div.container div.snake.death div {
+    background-color: grey;
+}
+
+div.container div.snake.transparent div {
+    background-color: transparent;
+
+}
+
+/* div.container div.snake div:not(.snake-head):before {
+    content: "";
+    position: absolute;
+}
+*/
+
+div.container div.snake div.snake-head {
+    z-index: 12;
+}
+
+div.container div.snake div.snake-head:before {
+    content: "";
+    position: absolute;
+    width: calc(var(--size) - 15px);
+    border: 5px yellow;
+    border-style: none solid none solid;
+    height: 5px;
+    margin: 2px;
+}
+
+div.container div.snake div.snake-head:after {
+    content: "";
+    position: absolute;
+    width: calc(var(--size) - 15px);
+    border: 3px black;
+    border-style: none solid none solid;
+    height: 5px;
+    margin: 2px 4px 2px 4px;
+}
+
+
+
+div.left {
+    transform: rotate(-90deg);
+}
+
+div.right {
+    transform: rotate(90deg);
+}
+
+div.bottom {
+    transform: rotate(180deg);
+}
+
+div.container div.fruit {
+    background-color: red;
+    width: 15px;
+    height: 15px;
+    margin: 2.5px;
+    position: absolute;
+    z-index: -1;
+    border-radius: 50%;
+}
+
+div.container div.fruit:before {
+    content: "";
+    position: absolute;
+    top: -5px;
+    left: 40%;
+    transform: translateX(-50%) rotate(-40deg);
+    width: 2px;
+    height: 8px;
+    background-color: green;
+    border-radius: 50%;
+}
+
+div.gameOver {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .1);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10000;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    font-size: 50px;
+    font-family: sans-serif;
+    font-weight: bold;
+    justify-content: center;
+    align-items: center;
+    color: rgb(49, 49, 49)
+}
+
+div.gameOver button {
+    margin-top: 50px;
+    font-size: 30px;
+    padding: 10px;
+    border: 2px solid rgb(54, 228, 54);
+    position: relative;
+    outline: none;
+    cursor: pointer;
+    overflow: hidden;
+    background-color: transparent;
+    border-radius: 10px;
+    transition: .3s;
+}
+
+div.gameOver button span {
+    /* background-color: transparent; */
+    width: 0px;
+    height: 0px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    transition: .5s;
+    border-radius: 50%;
+    z-index: -1;
+    background-color: lightgreen;
+}
+
+div.gameOver button:hover {
+    border-color: rgb(119, 221, 119);
+}
+
+div.gameOver button:hover span {
+    width: 150px;
+    height: 150px;
+}
+
+div.gameOver button:active span {
+    background-color: rgb(181, 241, 181);
+}
+
+div.gameOver button:active {
+    border-color: rgb(56, 218, 56);
+}
